@@ -4,7 +4,7 @@
   "description": "ui component for easy.lagou.com",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool source-map --hot --inline --progress --colors --config webpack.config.js",
+    "dev": "webpack-dev-server --devtool source-map -p --hot --inline --progress --colors --config webpack.config.js",
     "build": "webpack --config webpack.config.prod.js"
   },
   "keywords": [],
