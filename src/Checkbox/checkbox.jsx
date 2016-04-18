@@ -2,6 +2,7 @@
 require('./checkbox.less');
 import React from "react";
 import Icon from "../Icon/icon";
+import classnames from "classnames";
 class Checkbox extends React.Component{
 	constructor(props) {
 		super(props);
@@ -29,13 +30,14 @@ class Checkbox extends React.Component{
 		return this.state.checked ? (this.props.value||true) : false
 	}
 	setValue(){
-		var checked = value === true || value ===1 || value === this.props.value;
+		let checked = value === true || value ===1 || value === this.props.value;
 		this.setState({checked});
 	}
 
 	render(){
+		let className = classnames(this.props.inline?'inline':'','checkbox')
 		return (
-			<label style= {this.props.style} className= 'checkbox'>
+			<label style= {this.props.style} className={className} >
 				<input 	type='checkbox'
 						disabled={this.props.readOnly}
 						onChange={this.handleChange.bind(this)}

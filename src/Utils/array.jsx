@@ -24,3 +24,13 @@ function getArray (arr){
 	})
 	return arr;
 }
+
+
+export function contain(arr,item){
+	if(!arr instanceof Array){
+		return false
+	}
+	for(let v of arr){
+		return  v === item?true:false;
+	}
+};

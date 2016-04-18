@@ -1,12 +1,15 @@
 @import "../common/variables.less";
 .checkbox {
 	position: relative;
-	display: inline-block;
+	display: block;
 	vertical-align: middle;
 	font-size: @fs-14;
 	margin-right: 30px;
 	color: @fc-3;
 	padding-left: 6px;
+	&.inline {
+		display: inline-block;
+	}
 	input {
 		opacity: 0;
 		& + i {

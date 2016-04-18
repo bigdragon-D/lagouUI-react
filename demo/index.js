@@ -44,14 +44,14 @@ ReactDOM.render(
 		<Radiogroup data={[{"value":"China","text":"中国"},{"value":"Japan","text":"日本"},{"value":"Korea","text":"韩国"}]} onChange={handleClick}/>
 		<h2>复选框</h2>
 		<div className="item">
-			<Checkbox text="复选框" />
-			<Checkbox text="默认选中的复选框" checked />
-			<Checkbox text="默认选中只读复选框" checked readOnly/>
+			<Checkbox text="复选框" inline/>
+			<Checkbox text="默认选中的复选框" checked inline />
+			<Checkbox text="默认选中只读复选框" checked readOnly inline />
 			<Checkbox text="回调函数" onChange={handleClick} />
 		</div>
 		<h2>复选框组</h2>
 		<div className="item">
-			<Checkboxgroup data={[{"value":"China","text":"中国"},{"value":"Japan","text":"日本"},{"value":"KoreaC","text":"韩国"}]} onClick={handleClick}/>
+			<Checkboxgroup data={[{"value":"China","text":"中国"},{"value":"Japan","text":"日本"},{"value":"KoreaC","text":"韩国"}]} value="China" inline onClick={handleClick}/>
 		</div>
 		<h2>输入框</h2>
 		<div className="item">
