@@ -28,30 +28,26 @@ export function removeClass(ele,className){
 };
 
 export function hasClass(ele,className){
-	let classArr = ele.classList;
-	return classArr.contains(className)
+	let classArr = ele.classList||[];
+	return classArr.length ? classArr.contains(className):false
 };
-
+// 移除兄弟元素的className，并给自己加上className
 export function removeSiblingsClass(ele,className){
 	let parentNode = ele.parentNode;
 	let arr = parentNode.children;
-	for(let i=0;i<arr.length;i++){
+	for(let i=0,len=arr.length;i<len;i++){
 		removeClass(arr[i],className)
 	}
 	addClass(ele,className);
 };
 
-/**
- * 判断是够出界
- */
-
-export function isOutside(parent,child) {
-	let pEle = child.parentNode;
-	while (pEle !== null) {
-		if(pEle === parent){
+export function isClickInner(ele,parentEle){
+	let node = ele.parentNode;
+	while(node !== null){
+		if(node == parentEle){
 			return true
 		}
-		pEle = pEle.parentNode;
+		node = node.parentNode
 	}
 	return false
-};
+}
